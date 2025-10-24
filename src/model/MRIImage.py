@@ -315,6 +315,7 @@ class Qmap(MRIImage):
         qmap_type = self.map_type
         log.info("Loading file for {} qmap...".format(qmap_type))
         niftii_file = nib.load(path)
+        niftii_file = nib.as_closest_canonical(niftii_file)
         self.np_matrix = niftii_file.get_fdata()
         # self.np_matrix = self.check_orientation(niftii_file, self.np_matrix)
         self.header = niftii_file.header
@@ -509,7 +510,7 @@ class Smap(MRIImage):
         img[~mask] = 0
 
         # get scaling
-        img = np.abs(img)
+        # img = np.abs(img)
         maxval = img.max()
         minval = img.min()
 
@@ -520,6 +521,7 @@ class Smap(MRIImage):
             self.np_matrix_3d = (scaling * (img - offset)).astype(np.float32)
         else:
             self.np_matrix = (scaling * (img - offset)).astype(np.float32)
+            # self.np_matrix = img.astype(np.float32)
 
     def size(self):
         return self.get_matrix_shape()
