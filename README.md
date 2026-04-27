@@ -86,10 +86,10 @@ Then reopen terminal.
 3. Create a [Python Virtual Environment](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
    ```sh
    conda create -n myenv python=3.9
-conda activate myenv
-python3 -m venv venv
-conda deactivate
-source venv/bin/activate
+   conda activate myenv
+   python3 -m venv venv
+   conda deactivate
+   source venv/bin/activate
     ```
 
 3. Install required libraries:
