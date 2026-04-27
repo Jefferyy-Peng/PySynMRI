@@ -148,7 +148,7 @@ Below part of the configuration file is reported for help.
 You can launch PySynthMRI running `launcher.py` in your Python IDE or via operating system command-line or terminal:
 
 ```shell
-python pySynthMRI.py
+python src/pySynthMRI.py
 ```
 
 ### Default Signal Models
