@@ -95,7 +95,7 @@
             },
             "FSE": {
                 "title": "T2w - Fast Spin Echo",
-                "equation": "PD*((1 - exp(-TR/T1))*exp(-TE/T2))",
+                "equation": "PD*((1 - exp(-TR/T1/1000))*exp(-TE/T2/1000))",
                 "series_number": 9103,
                 "parameters": {
                     "TR": {
@@ -185,7 +185,7 @@
             },
             "TBE": {
                 "title": "Tissue Border Enhancement by inversion recovery",
-                "equation": "abs(PD * (1-2*exp(-TI/T1)) * (1-exp(-TR/T1)) * exp(-TE/T2))",
+                "equation": "abs(PD * (1-2*exp(-TI/T1/1000)) * (1-exp(-TR/T1/1000)) * exp(-TE/T2/1000))",
                 "series_number": 9106,
                 "parameters": {
                     "TR": {
