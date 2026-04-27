@@ -72,11 +72,25 @@ using Linux or MacOS<br>
 Make sure you have [Python](https://python.org/) version >= 3.6.
 ## Installation
 
-1. Clone the repository:
+1. Install Miniconda (MacOS ARM)
+run this in terminal
+```sh
+curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh
+bash ~/Miniconda3-latest-MacOSX-arm64.sh
+```
+Then reopen terminal.
+2. Clone the repository:
    ```sh
    git clone https://github.com/FiRMLAB-Pisa/pySynthMRI.git
    ```
-2. Create a [Python Virtual Environment](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
+3. Create a [Python Virtual Environment](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
+   ```sh
+   conda create -n myenv python=3.9
+   conda activate myenv
+   python3 -m venv venv
+   conda deactivate
+   source venv/bin/activate
+    ```
 
 3. Install required libraries:
    ```sh
@@ -134,7 +148,7 @@ Below part of the configuration file is reported for help.
 You can launch PySynthMRI running `launcher.py` in your Python IDE or via operating system command-line or terminal:
 
 ```shell
-python pySynthMRI.py
+python src/pySynthMRI.py
 ```
 
 ### Default Signal Models
